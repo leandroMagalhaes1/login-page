@@ -1,5 +1,5 @@
 body{
-    background-image: url(images/forest.gif);
+    background-image: url(images/mystical-blue-forest-gg1cjxrc51bn8oh3.gif);
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -8,30 +8,40 @@ body{
     align-items: center; 
 }
 
-.login_data{
-    background-color: rgba(122, 131, 110, 0.7);
+.regist_data{
+    background-color: rgba(131, 145, 255, 0.7);
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     font-size: 20px;
     padding: 20px;
-    width: 400px;
-    height: 400px;
-    color: rgb(197, 197, 197);
+    width: 500px;
+    height: 450px;
+    color: rgb(195, 201, 250);
     border-radius: 30px;
 }
 
 
-.login_username{
+.regist_username{
     padding: 10px;
-    background-color: rgba(124, 129, 118, 0.7);
+    background-color: rgba(88, 107, 246, 0.7);
     display: flex;
     justify-content:space-around;
     border-radius: 20px;
+    
 }
 
-.login_password{
+.regist_password{
     padding: 10px;
-    background-color: rgba(124, 129, 118, 0.7);
+    background-color: rgba(88, 107, 246, 0.7);
+    display: flex;
+    justify-content:space-around;
+    margin-top: 30px;
+    border-radius: 20px;
+}
+
+.regist_confirma_password{
+    padding: 10px;
+    background-color: rgba(88, 107, 246, 0.7);
     display: flex;
     justify-content:space-around;
     margin-top: 30px;
@@ -39,24 +49,40 @@ body{
 }
 
 .login_registo{
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
-.a_cria{
-    
+
+.regist_login{
+    margin-top: 10px;
+}
+
+.volta_login{
     color: rgb(215, 255, 213);
+    
 }
 
-#username_id{
+.button_div_confirma{
+    display: flex;
+    align-items: flex-start;
+}
+
+#regist_username{
     background-color: rgba(255, 255, 255,0.4);
     width: 200px;
 }
-#password_id{
+#input_password{
     background-color: rgba(255, 255, 255,0.4);
     width: 200px;
 }
 
-#button_login{
+#input_confirma_password{
+    background-color: rgba(255, 255, 255,0.4);
+    width: 200px;
+    height: 20px;
+}
+
+#button_cria_conta{
     margin-top: 70px;
     background-color: rgba(255, 255, 255,0.4);
     font-size: 20px;
@@ -64,7 +90,7 @@ body{
     width: 380px;
 }
 
-#button_login:hover{
+#button_cria_conta:hover{
     background-color: rgba(255, 255, 255,0.2);
     cursor: pointer;
 }
