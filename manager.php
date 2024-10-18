@@ -1,3 +1,12 @@
 <?php
+$username = null;
+$password = null;
 
-echo $_POST["username"];
+$username = $_POST["username"];
+$password = $_POST["password"];
+
+if($username != "admin" || $password != "123"){
+    echo "sem sucesso";
+}else{
+    echo "login com sucesso";
+}
