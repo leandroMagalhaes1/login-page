@@ -13,7 +13,7 @@
         </div>
 
         <!-- Wrap everything inside a form -->
-        <form action="profile.html" method="POST">
+        <form action="manager.php" method="post">
 
             <!-- Username field -->
             <div class="regist_username">
