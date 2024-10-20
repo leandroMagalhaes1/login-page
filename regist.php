@@ -1,3 +1,18 @@
+<?php
+    include('database.php');
+//verificar credibilidade dos dados ao registar
+//inserir na tabela dos users
+    $username=null;
+    $password=null;
+
+
+    if(isset($_POST['submit'])){
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +53,7 @@
 
             <!-- Register button -->
             <div class="regist_cria_conta">
-                <button id="button_cria_conta" type="submit">registar Conta</button>
+                <button id="button_cria_conta" name="submit" type="submit">registar Conta</button>
 
                 <script>
                     

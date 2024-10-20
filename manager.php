@@ -9,7 +9,7 @@ if($username != null && $password != null){
     $password = $_POST["regist_password"];
 }
 
-$login_username = null;
+$login_username = null; 
 $login_password = null;
 
 $login_username = $_POST["username"];
@@ -20,3 +20,5 @@ if($username != $login_password || $password != $login_password){
 }else{
     echo "login com sucesso";
 }
+
+
