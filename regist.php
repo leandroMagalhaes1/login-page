@@ -1,14 +1,31 @@
 <?php
-    include('database.php');
+    include("database.php");
 //verificar credibilidade dos dados ao registar
 //inserir na tabela dos users
     $username=null;
     $password=null;
 
 
-    if(isset($_POST['submit'])){
+    if (isset($_POST['submit'])) {
         $username = $_POST['username'];
         $password = $_POST['password'];
+        $confirmPassword = $_POST['confirm_password'];
+    
+        // Check if passwords match
+        if ($password !== $confirmPassword) {
+            echo "As senhas não coincidem.";
+            exit; // Stop further execution
+        }
+    
+        // Prepare the SQL statement
+        $sql = "INSERT INTO user (User_Name, User_Password) VALUES ('$username', '$password')";
+    
+        // Execute the query
+        if (mysqli_query($conn, $sql)) {
+            echo "Novo registro criado com sucesso";
+        } else {
+            echo "Erro: " . mysqli_error($conn);
+        }
     }
 ?>
 
@@ -28,7 +45,7 @@
         </div>
 
         <!-- Wrap everything inside a form -->
-        <form action="manager.php" method="post">
+        <form action="regist.php" method="post">
 
             <!-- Username field -->
             <div class="regist_username">

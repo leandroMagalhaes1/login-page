@@ -1,3 +1,26 @@
+<?php
+include("database.php");
+
+$username = null;
+
+if (isset($_POST["login"])) {
+    $username = $_POST["username"];
+
+    $sql = "SELECT User_Name FROM user WHERE User_Name = '$username'";
+
+    if (mysqli_query($conn, $sql)) {
+        if(empty($sql)){
+            
+        }
+        // After a successful query, redirect to avoid resubmission on reload
+        header('Location: profile.php');
+        exit(); // Always exit after a redirect to prevent further script execution
+    } else {
+        echo "Erro: " . mysqli_error($conn);
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +39,7 @@
         </div>
 
         <!-- Wrap everything inside a form -->
-        <form action="manager.php" method="post">
+        <form action="index.php" method="post">
 
             <!-- Username field -->
             <div class="login_username">
@@ -32,7 +55,7 @@
             
             <!-- Login button -->
             <div class="login_button">
-                <button id="button_login" type="submit">Login</button>
+                <button id="button_login" name="login" type="submit">Login</button>
             </div>
 
         </form>
