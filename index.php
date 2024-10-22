@@ -6,17 +6,26 @@ $username = null;
 if (isset($_POST["login"])) {
     $username = $_POST["username"];
 
-    $sql = "SELECT User_Name FROM user WHERE User_Name = '$username'";
+    $password = $_POST["password"];
 
-    if (mysqli_query($conn, $sql)) {
-        if(empty($sql)){
-            
-        }
-        // After a successful query, redirect to avoid resubmission on reload
+    $sql = "SELECT User_Name FROM user WHERE User_Name = '$username' AND User_Password = '$password'";
+    $result = mysqli_query($conn, $sql);
+
+    if ($result) {
+     // Check if the user exists (number of rows > 0)
+     if (mysqli_num_rows($result) > 0) {
+        // Redirect to the profile page if the user exists
         header('Location: profile.php');
         exit(); // Always exit after a redirect to prevent further script execution
     } else {
-        echo "Erro: " . mysqli_error($conn);
+        // Show an alert if the user does not exist
+        echo "<script>alert('Acesso negado');</script>";
+        header(header: 'Location: index.php');
+        exit();
+    }
+    } else {
+    // Handle query errors
+    echo "Erro: " . mysqli_error($conn);
     }
 }
 ?>

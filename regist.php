@@ -22,9 +22,19 @@
     
         // Execute the query
         if (mysqli_query($conn, $sql)) {
-            echo "Novo registro criado com sucesso";
+            // Use JavaScript for both the alert and redirect
+            echo "<script>
+                alert('Conta criada com sucesso');
+                window.location.href = 'index.php';
+            </script>";
+            exit();
         } else {
             echo "Erro: " . mysqli_error($conn);
+            echo "<script>
+                alert('Erro ao criar conta');
+                window.location.href = 'regist.php';
+            </script>";
+            exit();
         }
     }
 ?>
