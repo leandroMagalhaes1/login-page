@@ -7,6 +7,12 @@ if (!isset($_SESSION['username'])) {
     exit();
 }
 
+if(isset($_POST['logout'])) {
+    session_destroy();
+    header("Location: index.php");
+    exit();
+}
+
 $username = $_SESSION['username'];
 
 
@@ -22,8 +28,17 @@ $username = $_SESSION['username'];
 </head>
 <body>
     <div class="container">
-    <p class="text">Bem vindo, <?php echo htmlspecialchars($username); ?>!</p>
-
+        <p class="text">Bem vindo, <?php echo htmlspecialchars($username); ?>!</p>
+        
+        <form action="profile.php" method="post">
+            <div class="button_logout">
+                <button id="bt_profile_logout" type="submit" name="logout">logout</button>
+            </div> 
+        </form>
+          
+        
     </div>
+
+    
 </body>
 </html>

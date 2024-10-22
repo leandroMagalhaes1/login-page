@@ -13,7 +13,10 @@
     
         // Check if passwords match
         if ($password !== $confirmPassword) {
-            echo "As senhas não coincidem.";
+            echo "<script>
+                alert('As senhas não coincidem');
+                window.location.href = 'regist.php';
+            </script>";
             exit; // Stop further execution
         }
     
