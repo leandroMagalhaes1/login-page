@@ -71,7 +71,7 @@
             
             <!-- Confirm password field -->
             <div class="regist_confirma_password">
-                <label for="input_confirma_password"><strong>Confirma Password</strong></label>
+                <label for="input_confirma_password"><strong>C Password</strong></label>
                 <div class="button_div_confirma">
                     <input id="input_confirma_password" name="confirm_password" type="password" required>
                 </div>
@@ -81,10 +81,6 @@
             <!-- Register button -->
             <div class="regist_cria_conta">
                 <button id="button_cria_conta" name="submit" type="submit">registar Conta</button>
-
-                <script>
-                    
-                </script>
             </div>
         </form>
         

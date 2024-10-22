@@ -1,0 +1,36 @@
+.container{
+    display: inline-block;
+}
+
+
+html, body {
+    background-color: antiquewhite;
+    height: 100%; /* Ensure the body takes the full height */
+    margin: 0; /* Remove any default margin */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.text{
+    font-size: 5em;
+    letter-spacing: 10px;
+    font-family: monospace;
+    border-right: 5px solid;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation:
+        typing 2s forwards, /* Complete the typing effect */
+        cursor-end 0s step-end 2s forwards; /* Make cursor invisible at the end */
+}
+
+
+@keyframes typing{
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes cursor-end {
+    to { border-color: transparent; } /* Hide the cursor at the end */
+}

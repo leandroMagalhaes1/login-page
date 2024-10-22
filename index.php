@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include("database.php");
 
 $username = null;
@@ -15,6 +17,9 @@ if (isset($_POST["login"])) {
      // Check if the user exists (number of rows > 0)
      if (mysqli_num_rows($result) > 0) {
         // Redirect to the profile page if the user exists
+
+        $_SESSION["username"]= $username;
+
         header('Location: profile.php');
         exit(); // Always exit after a redirect to prevent further script execution
     } else {
